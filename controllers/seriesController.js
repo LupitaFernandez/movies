@@ -142,8 +142,6 @@ module.exports = {
             db.Series.update(
                 {
                     title : req.body.title,
-                    rating : req.body.rating,
-                    awards : req.body.awards,
                     release_date : req.body.release_date,
                     end_date : req.body.end_date,
                     genre_id : req.body.genre
@@ -174,13 +172,6 @@ module.exports = {
         }
     },
     delete : function(req,res){
-        db.actor_movie.destroy({
-            where : {
-                movie_id : req.params.id
-            }
-        })
-        .then( result => console.log('se ha eliminado la relación correctamente'))
-        .catch(error => res.send(error))
 
         db.Series.destroy({
             where : {
