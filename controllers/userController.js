@@ -28,7 +28,7 @@ module.exports = {
         res.render('login')
     },
     processLogin: function (req, res) {
-        let errors = validationResult(req);
+        let errors = validationResult(req); 
         if (errors.isEmpty()) {
 
             db.Usuarios.findOne({
